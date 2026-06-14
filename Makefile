@@ -5,7 +5,7 @@ help:
 	@echo ""
 	@echo "  make storybook          Start Storybook dev server (port 6006)"
 	@echo "  make build-storybook    Build Storybook for production"
-	@echo "  make update-components  Rebuild dash-ui from dash-master and reinstall"
+	@echo "  make update-components  Update @edgar-treischl/dash-ui from GitHub Packages"
 	@echo "  make install            Install all dependencies"
 	@echo "  make clean              Remove build artifacts"
 	@echo ""
@@ -17,10 +17,8 @@ build-storybook:
 	pnpm build-storybook
 
 update-components:
-	@echo "Building dash-ui from dash-master..."
-	@cd ../dash-master/packages/ui && pnpm build
-	@echo "Reinstalling dash-ui in dash-storybook..."
-	@pnpm install --force dash-ui
+	@echo "Updating @edgar-treischl/dash-ui from GitHub Packages..."
+	@pnpm update @edgar-treischl/dash-ui
 	@echo "✓ Components updated! Restart Storybook to see changes."
 
 install:

@@ -7,7 +7,7 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "lint": "eslint . --ext .ts,.tsx",
-    "update-components": "cd ../dash-master/packages/ui && pnpm build && cd - && pnpm install --force dash-ui && echo '✓ Components updated! Restart Storybook to see changes.'"
+    "update-components": "pnpm update @edgar-treischl/dash-ui && echo '✓ Components updated! Restart Storybook to see changes.'"
   },
   "keywords": [],
   "author": "",
@@ -20,7 +20,7 @@
     }
   },
   "dependencies": {
-    "dash-ui": "file:../dash-master/packages/ui"
+    "@edgar-treischl/dash-ui": "file:../dash-ui"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^8.6.0",

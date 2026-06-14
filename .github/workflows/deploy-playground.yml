@@ -32,17 +32,8 @@ jobs:
           node-version: '22'
           cache: 'pnpm'
 
-      - name: Checkout dash-master repo
-        uses: actions/checkout@v4
-        with:
-          repository: edgar-treischl/dash-master
-          path: dash-master
-
-      - name: Install dash-master dependencies
-        run: cd dash-master/packages/ui && pnpm install
-
-      - name: Build dash-ui library
-        run: cd dash-master/packages/ui && pnpm build
+      - name: Configure GitHub Packages
+        run: pnpm config set "//npm.pkg.github.com/:_authToken" "${{ secrets.GITHUB_TOKEN }}"
 
       - name: Install storybook dependencies
         run: pnpm install --frozen-lockfile

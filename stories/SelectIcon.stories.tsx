@@ -1,6 +1,6 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import { SelectIcon } from "dash-ui";
+import { SelectIcon } from "@edgar-treischl/dash-ui";
 
 const meta = {
   title: "Components/Icons/SelectIcon",

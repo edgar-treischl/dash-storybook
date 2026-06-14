@@ -1,6 +1,5 @@
 import React from "react";
 import type { Preview } from "@storybook/react";
-import "dash-ui/dist/index.css";
 
 // Make React available globally for JSX
 (window as any).React = React;

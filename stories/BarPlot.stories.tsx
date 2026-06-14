@@ -1,6 +1,6 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import { BarPlot } from "dash-ui";
+import { BarPlot } from "@edgar-treischl/dash-ui";
 
 const meta = {
   title: "Components/BarPlot",

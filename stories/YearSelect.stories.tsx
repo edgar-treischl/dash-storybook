@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import { YearSelect } from "dash-ui";
+import { YearSelect } from "@edgar-treischl/dash-ui";
 
 const meta = {
   title: "Components/YearSelect",
