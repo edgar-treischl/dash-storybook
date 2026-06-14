@@ -21,6 +21,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Checkout dash-ui
+        uses: actions/checkout@v4
+        with:
+          repository: edgar-treischl/dash-ui
+          path: ../dash-ui
+          token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
         with:
