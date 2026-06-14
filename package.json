@@ -19,9 +19,6 @@
       "onFail": "download"
     }
   },
-  "dependencies": {
-    "@edgar-treischl/dash-ui": "github:edgar-treischl/dash-ui"
-  },
   "devDependencies": {
     "@storybook/addon-essentials": "^8.6.0",
     "@storybook/addon-interactions": "^8.6.0",
@@ -29,11 +26,14 @@
     "@storybook/blocks": "^8.6.0",
     "@storybook/react": "^8.6.0",
     "@storybook/react-vite": "^8.6.0",
-    "storybook": "^8.6.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "storybook": "^8.6.0",
     "typescript": "^5.0.0",
     "vite": "^6.0.0"
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "@edgar-treischl/dash-ui": "github:edgar-treischl/dash-ui"
+  }
 }
