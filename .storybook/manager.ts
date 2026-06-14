@@ -6,7 +6,7 @@ const theme = create({
   brandTitle:
     '<img src="./dash-logo.svg" alt="Dash UI Components" style="height:64px;width:auto;display:block;" />',
   brandImage: null,
-  brandUrl: 'https://github.com/edgar-treischl/dash-master',
+  brandUrl: 'https://edgar-treischl.github.io/dash-storybook/?path=/',
 })
 
 addons.setConfig({
