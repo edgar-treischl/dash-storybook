@@ -20,7 +20,7 @@
     }
   },
   "dependencies": {
-    "@edgar-treischl/dash-ui": "file:../dash-ui"
+    "@edgar-treischl/dash-ui": "github:edgar-treischl/dash-ui"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^8.6.0",

@@ -208,8 +208,8 @@ importers:
   .:
     dependencies:
       '@edgar-treischl/dash-ui':
-        specifier: file:../dash-ui
-        version: file:../dash-ui(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+        specifier: github:edgar-treischl/dash-ui
+        version: https://codeload.github.com/edgar-treischl/dash-ui/tar.gz/e5ccaadb23e58901d952fa0c9c95cb91928c3a90(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
     devDependencies:
       '@storybook/addon-essentials':
         specifier: ^8.6.0
@@ -321,8 +321,9 @@ packages:
     resolution: {integrity: sha512-4zBIxpPzowiZpusoFkyGVwakdRJUyuH5PxQ/PrqghfdFWWasvnCdPfQXHrenDai+gyLARulZjZowCOj6fjT4pA==}
     engines: {node: '>=6.9.0'}
 
-  '@edgar-treischl/dash-ui@file:../dash-ui':
-    resolution: {directory: ../dash-ui, type: directory}
+  '@edgar-treischl/dash-ui@https://codeload.github.com/edgar-treischl/dash-ui/tar.gz/e5ccaadb23e58901d952fa0c9c95cb91928c3a90':
+    resolution: {gitHosted: true, integrity: sha512-mdSx7bp1NtEuPSgTluYADQaIQnWgiAQyXxTLAxAsAByKx8YefWAHoLpPuE2eyd7eHV4A8weUpiHj/WXNcH5fLQ==, tarball: https://codeload.github.com/edgar-treischl/dash-ui/tar.gz/e5ccaadb23e58901d952fa0c9c95cb91928c3a90}
+    version: 1.0.0
     peerDependencies:
       react: ^19.0.0
       react-dom: ^19.0.0
@@ -1749,7 +1750,7 @@ snapshots:
       '@babel/helper-string-parser': 7.29.7
       '@babel/helper-validator-identifier': 7.29.7
 
-  '@edgar-treischl/dash-ui@file:../dash-ui(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
+  '@edgar-treischl/dash-ui@https://codeload.github.com/edgar-treischl/dash-ui/tar.gz/e5ccaadb23e58901d952fa0c9c95cb91928c3a90(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
     dependencies:
       react: 19.2.7
       react-dom: 19.2.7(react@19.2.7)
