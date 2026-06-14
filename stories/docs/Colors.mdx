@@ -19,67 +19,53 @@ The BarPlot component uses the following color scheme for school types:
       <td style={{ padding: '12px' }}><strong>GS</strong> (Grundschule)</td>
       <td style={{ padding: '12px' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <div style={{ width: '32px', height: '32px', backgroundColor: '#264653', borderRadius: '4px', border: '1px solid #ddd' }} />
-          <span>Dark Blue</span>
+          <div style={{ width: '32px', height: '32px', backgroundColor: '#4285F4', borderRadius: '4px', border: '1px solid #ddd' }} />
+          <span>Blue</span>
         </div>
       </td>
-      <td style={{ padding: '12px', fontFamily: 'monospace', fontSize: '14px' }}>#264653</td>
+      <td style={{ padding: '12px', fontFamily: 'monospace', fontSize: '14px' }}>#4285F4</td>
     </tr>
     <tr style={{ borderBottom: '1px solid #f0f0f0' }}>
       <td style={{ padding: '12px' }}><strong>MS</strong> (Mittelschule)</td>
       <td style={{ padding: '12px' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <div style={{ width: '32px', height: '32px', backgroundColor: '#2a9d8f', borderRadius: '4px', border: '1px solid #ddd' }} />
-          <span>Teal</span>
+          <div style={{ width: '32px', height: '32px', backgroundColor: '#34A853', borderRadius: '4px', border: '1px solid #ddd' }} />
+          <span>Green</span>
         </div>
       </td>
-      <td style={{ padding: '12px', fontFamily: 'monospace', fontSize: '14px' }}>#2a9d8f</td>
+      <td style={{ padding: '12px', fontFamily: 'monospace', fontSize: '14px' }}>#34A853</td>
     </tr>
     <tr style={{ borderBottom: '1px solid #f0f0f0' }}>
       <td style={{ padding: '12px' }}><strong>RS</strong> (Realschule)</td>
       <td style={{ padding: '12px' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <div style={{ width: '32px', height: '32px', backgroundColor: '#e9c46a', borderRadius: '4px', border: '1px solid #ddd' }} />
-          <span>Gold</span>
+          <div style={{ width: '32px', height: '32px', backgroundColor: '#EA4335', borderRadius: '4px', border: '1px solid #ddd' }} />
+          <span>Red/Orange</span>
         </div>
       </td>
-      <td style={{ padding: '12px', fontFamily: 'monospace', fontSize: '14px' }}>#e9c46a</td>
+      <td style={{ padding: '12px', fontFamily: 'monospace', fontSize: '14px' }}>#EA4335</td>
     </tr>
     <tr style={{ borderBottom: '1px solid #f0f0f0' }}>
       <td style={{ padding: '12px' }}><strong>GY</strong> (Gymnasium)</td>
       <td style={{ padding: '12px' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <div style={{ width: '32px', height: '32px', backgroundColor: '#f4a261', borderRadius: '4px', border: '1px solid #ddd' }} />
-          <span>Orange</span>
+          <div style={{ width: '32px', height: '32px', backgroundColor: '#FBBC04', borderRadius: '4px', border: '1px solid #ddd' }} />
+          <span>Yellow</span>
         </div>
       </td>
-      <td style={{ padding: '12px', fontFamily: 'monospace', fontSize: '14px' }}>#f4a261</td>
+      <td style={{ padding: '12px', fontFamily: 'monospace', fontSize: '14px' }}>#FBBC04</td>
     </tr>
     <tr>
       <td style={{ padding: '12px' }}><strong>IGS</strong> (Integrierte Gesamtschule)</td>
       <td style={{ padding: '12px' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <div style={{ width: '32px', height: '32px', backgroundColor: '#e76f51', borderRadius: '4px', border: '1px solid #ddd' }} />
-          <span>Coral</span>
+          <div style={{ width: '32px', height: '32px', backgroundColor: '#9C27B0', borderRadius: '4px', border: '1px solid #ddd' }} />
+          <span>Purple</span>
         </div>
       </td>
-      <td style={{ padding: '12px', fontFamily: 'monospace', fontSize: '14px' }}>#e76f51</td>
+      <td style={{ padding: '12px', fontFamily: 'monospace', fontSize: '14px' }}>#9C27B0</td>
     </tr>
   </tbody>
 </table>
 
-## Usage in Components
-
-These colors are defined in the `retention.tsx` file in the dash-ui library and used consistently across all components:
-
-```typescript
-export const SCHOOL_TYPE_COLORS: Record<SchoolType, string> = {
-  'GS': '#264653',   // Dark Blue
-  'MS': '#2a9d8f',   // Teal
-  'RS': '#e9c46a',   // Gold
-  'GY': '#f4a261',   // Orange
-  'IGS': '#e76f51',  // Coral
-}
-```
-
-The color palette is designed to be visually distinct and accessible for data visualization.
+These colors are defined in the `retention.tsx` file and used consistently across all components.
