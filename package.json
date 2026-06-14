@@ -1,0 +1,39 @@
+{
+  "name": "dash-storybook",
+  "version": "1.0.0",
+  "description": "Storybook documentation site for Dash UI components",
+  "private": true,
+  "scripts": {
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "lint": "eslint . --ext .ts,.tsx",
+    "update-components": "cd ../dash-master/packages/ui && pnpm build && cd - && pnpm install --force dash-ui && echo '✓ Components updated! Restart Storybook to see changes.'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "^11.6.0",
+      "onFail": "download"
+    }
+  },
+  "dependencies": {
+    "dash-ui": "file:../dash-master/packages/ui"
+  },
+  "devDependencies": {
+    "@storybook/addon-essentials": "^8.6.0",
+    "@storybook/addon-interactions": "^8.6.0",
+    "@storybook/addon-links": "^8.6.0",
+    "@storybook/blocks": "^8.6.0",
+    "@storybook/react": "^8.6.0",
+    "@storybook/react-vite": "^8.6.0",
+    "storybook": "^8.6.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "typescript": "^5.0.0",
+    "vite": "^6.0.0"
+  },
+  "type": "module"
+}

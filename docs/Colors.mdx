@@ -1,0 +1,71 @@
+import { Meta } from '@storybook/blocks'
+
+<Meta title="Documentation/Colors" />
+
+# Color Scheme
+
+The BarPlot component uses the following color scheme for school types:
+
+<table style={{ width: '100%', borderCollapse: 'collapse', marginTop: '1.5rem', marginBottom: '1.5rem' }}>
+  <thead>
+    <tr style={{ borderBottom: '2px solid #e0e0e0' }}>
+      <th style={{ padding: '12px', textAlign: 'left', fontWeight: '600' }}>School Type</th>
+      <th style={{ padding: '12px', textAlign: 'left', fontWeight: '600' }}>Color</th>
+      <th style={{ padding: '12px', textAlign: 'left', fontWeight: '600' }}>Hex</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style={{ borderBottom: '1px solid #f0f0f0' }}>
+      <td style={{ padding: '12px' }}><strong>GS</strong> (Grundschule)</td>
+      <td style={{ padding: '12px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <div style={{ width: '32px', height: '32px', backgroundColor: '#4285F4', borderRadius: '4px', border: '1px solid #ddd' }} />
+          <span>Blue</span>
+        </div>
+      </td>
+      <td style={{ padding: '12px', fontFamily: 'monospace', fontSize: '14px' }}>#4285F4</td>
+    </tr>
+    <tr style={{ borderBottom: '1px solid #f0f0f0' }}>
+      <td style={{ padding: '12px' }}><strong>MS</strong> (Mittelschule)</td>
+      <td style={{ padding: '12px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <div style={{ width: '32px', height: '32px', backgroundColor: '#34A853', borderRadius: '4px', border: '1px solid #ddd' }} />
+          <span>Green</span>
+        </div>
+      </td>
+      <td style={{ padding: '12px', fontFamily: 'monospace', fontSize: '14px' }}>#34A853</td>
+    </tr>
+    <tr style={{ borderBottom: '1px solid #f0f0f0' }}>
+      <td style={{ padding: '12px' }}><strong>RS</strong> (Realschule)</td>
+      <td style={{ padding: '12px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <div style={{ width: '32px', height: '32px', backgroundColor: '#EA4335', borderRadius: '4px', border: '1px solid #ddd' }} />
+          <span>Red/Orange</span>
+        </div>
+      </td>
+      <td style={{ padding: '12px', fontFamily: 'monospace', fontSize: '14px' }}>#EA4335</td>
+    </tr>
+    <tr style={{ borderBottom: '1px solid #f0f0f0' }}>
+      <td style={{ padding: '12px' }}><strong>GY</strong> (Gymnasium)</td>
+      <td style={{ padding: '12px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <div style={{ width: '32px', height: '32px', backgroundColor: '#FBBC04', borderRadius: '4px', border: '1px solid #ddd' }} />
+          <span>Yellow</span>
+        </div>
+      </td>
+      <td style={{ padding: '12px', fontFamily: 'monospace', fontSize: '14px' }}>#FBBC04</td>
+    </tr>
+    <tr>
+      <td style={{ padding: '12px' }}><strong>IGS</strong> (Integrierte Gesamtschule)</td>
+      <td style={{ padding: '12px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <div style={{ width: '32px', height: '32px', backgroundColor: '#9C27B0', borderRadius: '4px', border: '1px solid #ddd' }} />
+          <span>Purple</span>
+        </div>
+      </td>
+      <td style={{ padding: '12px', fontFamily: 'monospace', fontSize: '14px' }}>#9C27B0</td>
+    </tr>
+  </tbody>
+</table>
+
+These colors are defined in the `retention.tsx` file and used consistently across all components.

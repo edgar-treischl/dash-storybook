@@ -1,0 +1,97 @@
+import { Meta } from '@storybook/blocks'
+
+<Meta title="Introduction" />
+
+# Welcome to Dash UI Components
+
+This is the component library for the Dash project, featuring reusable React UI components designed for data visualization and analytics.
+
+## Getting Started
+
+### What's included
+
+This library provides a collection of React components built with:
+- **React 19+** - Modern React with the latest features
+- **TypeScript** - Full type safety and IDE support
+- **Vite** - Fast development and building
+- **tsup** - ESM and CommonJS distribution formats
+
+### Available Components
+
+- **BarPlot** - Visualize school retention data with interactive bar charts
+- **YearSelect** - Year selector dropdown with custom styling
+- **SelectIcon** - SVG icon for dropdown indicators
+
+## Installation
+
+To use these components in your project:
+
+```bash
+pnpm add github:edgar-treischl/dash-master/packages/ui
+```
+
+## Quick Example
+
+### BarPlot for Data Visualization
+
+```tsx
+import { BarPlot } from 'dash-ui'
+
+export function MyComponent() {
+  const data = [
+    { type: 'GS', count: 120, percent: 75 },
+    { type: 'MS', count: 40, percent: 25 },
+  ]
+
+  return <BarPlot data={data} year="2024/25" />
+}
+```
+
+### YearSelect with Icon for Year Filtering
+
+```tsx
+import { YearSelect, SelectIcon } from 'dash-ui'
+import { useState } from 'react'
+
+export function FilterComponent() {
+  const [selectedYear, setSelectedYear] = useState('2024/25')
+
+  return (
+    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+      <SelectIcon />
+      <YearSelect 
+        selectedYear={selectedYear}
+        onYearChange={setSelectedYear}
+        label="Select Year"
+      />
+    </div>
+  )
+}
+```
+
+## Documentation
+
+Browse the components in the sidebar to view:
+- Live component previews
+- Component props and API
+- Usage examples and variations
+
+## Repository Structure
+
+This Storybook is maintained separately from the component library:
+- **dash-master** - Component library source code
+- **dash-storybook** - Documentation and component showcase (this site)
+
+## Contributing
+
+To add or modify components in the library:
+
+1. Work in the `dash-master` repository
+2. Create or edit components in `packages/ui/src/`
+3. Export them in `src/index.ts`
+4. Build and test: `pnpm build`
+5. Update stories in this repository to showcase changes
+
+---
+
+**Ready to explore?** Check out the components in the sidebar →
