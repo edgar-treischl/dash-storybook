@@ -13,7 +13,7 @@ export default create({
   fontBase: '"Open Sans", sans-serif',
   fontCode: 'monospace',
   brandTitle: 'Dash Storybook',
-  brandUrl: '/.',
+  brandUrl: getBasePath(),
   brandImage: `${getBasePath()}dash-logo.svg`,
   brandTarget: '_self',
 
