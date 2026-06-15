@@ -6,7 +6,7 @@ export default create({
   fontBase: '"Open Sans", sans-serif',
   fontCode: 'monospace',
   brandTitle: 'Dash Storybook',
-  brandUrl: 'https://edgar-treischl.github.io/dash-storybook/?path=/',
+  brandUrl: '/.',
   brandImage: '/dash-logo.svg',
   brandTarget: '_self',
 

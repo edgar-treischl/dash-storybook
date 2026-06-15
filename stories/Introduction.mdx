@@ -2,9 +2,13 @@ import { Meta } from '@storybook/blocks'
 
 <Meta title="Introduction" />
 
-# Welcome to Dash UI Components
+# Welcome to Dash Storybook
 
-This is the component library for the Dash project, featuring reusable React UI components designed for data visualization and analytics.
+This is the component library for Dash, featuring reusable React UI components designed for data visualization and analytics.
+
+
+<img src="/dash-logo.svg" alt="Dash Logo" width="200" height="200" style={{margin: '20px 0'}} />
+
 
 ## Getting Started
 
@@ -16,11 +20,11 @@ This library provides a collection of React components built with:
 - **Vite** - Fast development and building
 - **tsup** - ESM and CommonJS distribution formats
 
+---
+
 ### Available Components
 
 - **BarPlot** - Visualize school retention data with interactive bar charts
-- **YearSelect** - Year selector dropdown with custom styling
-- **SelectIcon** - SVG icon for dropdown indicators
 
 ## Installation
 
@@ -60,9 +64,8 @@ export function FilterComponent() {
     <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
       <SelectIcon />
       <YearSelect 
-        selectedYear={selectedYear}
-        onYearChange={setSelectedYear}
-        label="Select Year"
+        value={selectedYear}
+        onChange={setSelectedYear}
       />
     </div>
   )
@@ -76,21 +79,15 @@ Browse the components in the sidebar to view:
 - Component props and API
 - Usage examples and variations
 
-## Repository Structure
-
-This Storybook is maintained separately from the component library:
-- **dash-master** - Component library source code
-- **dash-storybook** - Documentation and component showcase (this site)
-
 ## Contributing
 
-To add or modify components in the library:
+To add or modify components:
 
-1. Work in the `dash-master` repository
-2. Create or edit components in `packages/ui/src/`
-3. Export them in `src/index.ts`
-4. Build and test: `pnpm build`
-5. Update stories in this repository to showcase changes
+1. Create or edit components in `dash-ui`
+2. Export them in `src/index.ts`
+3. Add a `.stories.tsx` file alongside the component
+4. Test in the playground app (`apps/playground`)
+5. Build and distribute: `pnpm build`
 
 ---
 
