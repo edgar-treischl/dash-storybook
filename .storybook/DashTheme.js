@@ -1,5 +1,12 @@
 import { create } from '@storybook/theming';
 
+const getBasePath = () => {
+  if (typeof window !== 'undefined' && process.env.NODE_ENV === 'production') {
+    return '/dash-storybook/';
+  }
+  return '/';
+};
+
 export default create({
   base: 'light',
   // Typography
@@ -7,7 +14,7 @@ export default create({
   fontCode: 'monospace',
   brandTitle: 'Dash Storybook',
   brandUrl: '/.',
-  brandImage: '/dash-logo.svg',
+  brandImage: `${getBasePath()}dash-logo.svg`,
   brandTarget: '_self',
 
   //
