@@ -2,82 +2,71 @@
 
 Storybook documentation site for the Dash UI component library.
 
-## Development
+## Quick Start
 
 ```bash
 # Install dependencies
 pnpm install
 
 # Start Storybook dev server
-pnpm storybook
-# or
 make storybook
+
+# Visit http://localhost:6006
 ```
 
-Visit `http://localhost:6006` to view the component stories.
+## Development Workflows
 
-## Updating Components from dash-master
+**📖 See [DEVELOPMENT.md](DEVELOPMENT.md) for detailed workflow guides.**
 
-When the component library in dash-master is updated, follow these steps to sync the changes:
+### Quick Reference
 
-### Quick Update (Recommended)
+#### For Active Component Development
+Use local linking for fast iteration:
+```bash
+make link-local         # Link local dash-ui package
+# ... develop in dash-ui, rebuild, see changes immediately ...
+make unlink-local       # Restore GitHub version when done
+```
 
-Use the convenience script to update in one command:
+#### For Stable Updates
+Update from GitHub after publishing changes:
+```bash
+make update-components  # Pull latest from GitHub
+git add pnpm-lock.yaml  # Commit lockfile changes
+git commit -m "Update dash-ui to [version/feature]"
+git push
+```
+
+## Updating Components from dash-ui
+
+When the dash-ui library is updated:
+
+### Using Make Commands (Recommended)
 
 ```bash
-# Using pnpm script
-pnpm update-components
-
-# Or using Make
-make update-components
+make update-components  # Updates from GitHub and reminds you to commit lockfile
 ```
 
-This will automatically:
-1. Build the dash-ui package in dash-master
-2. Force reinstall it in dash-storybook
-3. Notify you to restart Storybook
-
-### Manual Update Steps
-
-If you prefer to run the steps manually:
-
-#### Step 1: Build the updated dash-ui package
+### Manual Update
 
 ```bash
-# Navigate to dash-master and build the UI package
-cd ../dash-master/packages/ui
-pnpm build
+pnpm update @edgar-treischl/dash-ui
+git add pnpm-lock.yaml
+git commit -m "Update dash-ui to latest"
 ```
 
-#### Step 2: Reinstall in dash-storybook
+**⚠️ Important:** Always commit the `pnpm-lock.yaml` changes! The lockfile ensures CI/CD uses the same version.
 
+### Alternative: Local Development Mode
+
+For rapid iteration without GitHub updates:
 ```bash
-# Navigate back to dash-storybook
-cd ../../../dash-storybook
-
-# Force reinstall to pick up the latest build
-pnpm install --force dash-ui
-
-# Or simply reinstall all dependencies
-pnpm install
+make link-local    # Use local dash-ui
+# ... develop ...
+make unlink-local  # Restore GitHub version
 ```
 
-#### Step 3: Restart Storybook
-
-If Storybook is running, restart it to see the changes:
-
-```bash
-# Stop the current server (Ctrl+C), then restart
-pnpm storybook
-```
-
-### Step 4: Update Stories (if needed)
-
-If new components were added or APIs changed:
-
-1. Create or update story files in `stories/`
-2. Follow the existing pattern (e.g., `ComponentName.stories.tsx`)
-3. Add documentation to MDX files if needed
+See [DEVELOPMENT.md](DEVELOPMENT.md) for complete workflow documentation.
 
 ## Building for Production
 
@@ -104,7 +93,9 @@ The deployment workflow:
 
 ## Architecture
 
-This repository consumes UI components from the **dash-master** component library via local file reference during development (`file:../dash-master/packages/ui`).
+This repository consumes UI components from the **dash-ui** repository via GitHub.
+
+**Package Source:** `github:edgar-treischl/dash-ui`
 
 Components are documented and showcased through Storybook stories in the `stories/` directory.
 
@@ -129,14 +120,29 @@ dash-storybook/
 ### Available Components
 
 - **BarPlot** - Horizontal bar chart for visualizing school data
+- **LineChart** - Multi-series line chart for retention trends over time
 - **YearSelect** - Year selector dropdown with custom styling
 - **SelectIcon** - SVG icon for dropdown indicators
 
+## Available Make Commands
+
+Run `make help` to see all available commands:
+
+```bash
+make help              # Show all commands
+make storybook         # Start dev server
+make build-storybook   # Build for production
+make update-components # Update dash-ui from GitHub
+make link-local        # Use local dash-ui for development
+make unlink-local      # Restore GitHub version
+make clean             # Remove build artifacts
+```
+
 ## Local Development vs. Production
 
-- **Local:** Uses `file:../dash-master/packages/ui` to reference the component library locally
-- **Production (GitHub Pages):** The deployment workflow clones dash-master, builds the package, and installs it during the build process
+- **Local Development:** 
+  - Option 1: Pull from GitHub (`make update-components`)
+  - Option 2: Link local package (`make link-local`)
+- **Production (GitHub Pages):** Always uses the committed lockfile version
 
-## Cleaning Up dash-master
-
-If you need to remove Storybook files from the dash-master repository (since they now live here), see **[CLEANUP.md](CLEANUP.md)** for detailed instructions.
+The CI/CD workflow uses `pnpm install --frozen-lockfile` to ensure reproducible builds.
