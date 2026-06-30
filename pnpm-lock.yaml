@@ -209,7 +209,7 @@ importers:
     dependencies:
       '@edgar-treischl/dash-ui':
         specifier: github:edgar-treischl/dash-ui
-        version: https://codeload.github.com/edgar-treischl/dash-ui/tar.gz/89acb5534533f076a080ab1607b85c7a486252da(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+        version: https://codeload.github.com/edgar-treischl/dash-ui/tar.gz/7ef43ba834742b2673c3581ac5bc9abf411e9c3c(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
     devDependencies:
       '@eslint/js':
         specifier: ^10.0.1
@@ -342,8 +342,8 @@ packages:
     resolution: {integrity: sha512-4zBIxpPzowiZpusoFkyGVwakdRJUyuH5PxQ/PrqghfdFWWasvnCdPfQXHrenDai+gyLARulZjZowCOj6fjT4pA==}
     engines: {node: '>=6.9.0'}
 
-  '@edgar-treischl/dash-ui@https://codeload.github.com/edgar-treischl/dash-ui/tar.gz/89acb5534533f076a080ab1607b85c7a486252da':
-    resolution: {gitHosted: true, integrity: sha512-WDz81xHDUCdg6nEFu/0oX3j7WtEg1U0N2i/tZQAV3PEMQmV5Bg7thHT6jrjXaHeAN5uPLQM2UCX6ko8n5SKsjQ==, tarball: https://codeload.github.com/edgar-treischl/dash-ui/tar.gz/89acb5534533f076a080ab1607b85c7a486252da}
+  '@edgar-treischl/dash-ui@https://codeload.github.com/edgar-treischl/dash-ui/tar.gz/7ef43ba834742b2673c3581ac5bc9abf411e9c3c':
+    resolution: {gitHosted: true, integrity: sha512-Rr8ZkadjZ2NKTje328rrM4fjiKAks4trByDCC3pzOC9dHa7eOLnQp46kwLwzi6x65xVOQ3UlQdl2QDgwGMuzsw==, tarball: https://codeload.github.com/edgar-treischl/dash-ui/tar.gz/7ef43ba834742b2673c3581ac5bc9abf411e9c3c}
     version: 1.0.0
     peerDependencies:
       react: ^19.0.0
@@ -2436,7 +2436,7 @@ snapshots:
       '@babel/helper-string-parser': 7.29.7
       '@babel/helper-validator-identifier': 7.29.7
 
-  '@edgar-treischl/dash-ui@https://codeload.github.com/edgar-treischl/dash-ui/tar.gz/89acb5534533f076a080ab1607b85c7a486252da(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
+  '@edgar-treischl/dash-ui@https://codeload.github.com/edgar-treischl/dash-ui/tar.gz/7ef43ba834742b2673c3581ac5bc9abf411e9c3c(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
     dependencies:
       react: 19.2.7
       react-dom: 19.2.7(react@19.2.7)
