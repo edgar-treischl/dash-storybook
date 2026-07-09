@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { BarPlot } from '@edgar-treischl/dash-ui'
+import { InterpretationBox } from '../../src/components/InterpretationBox'
 import { useState } from 'react'
 import './RetentionViewExample.css'
 
@@ -53,14 +54,17 @@ const DATA_BY_YEAR: Record<SchoolYear, Array<{ type: SchoolType; count: number; 
 
 /**
  * RetentionViewExample demonstrates how to build a complete view layout
- * combining the BarPlot component with controls, legend, and statistics.
+ * combining the BarPlot component with controls, legend, tabbed interpretation,
+ * and year-over-year statistics.
  *
  * Key features:
- * - Interactive year selection
+ * - Interactive year selection with dropdown control
  * - BarPlot component for data visualization
  * - Color-coded legend for school types
- * - Year-over-year change statistics
- * - Responsive layout with chart and sidebar
+ * - Tabbed InterpretationBox with "Befund" and "Hinweis" tabs
+ * - Year-over-year change statistics with color coding
+ * - Responsive two-column layout (chart + sidebar)
+ * - Professional styling with shadows and spacing
  */
 function RetentionViewExampleComponent() {
   const [selectedYear, setSelectedYear] = useState<SchoolYear>('2024/25')
@@ -89,6 +93,67 @@ function RetentionViewExampleComponent() {
     type: schoolType,
     change: calculateYoYChange(schoolType),
   }))
+
+  // Build interpretation tabs with detailed content
+  const interpretationTabs = {
+    befund: {
+      label: 'Befund',
+      content: (
+        <div>
+          <p>
+            Wie unterscheiden sich Schularten nach Wiederholungsquoten? Das Balkendiagramm zeigt die Anteile der
+            Schülerinnen und Schüler, die in verschiedenen Schultypen in Bayern Klassen wiederholen.
+          </p>
+          <ul>
+            <li>
+              <strong>Grundschulen (GS):</strong> Mit {yearData[0]?.percent}% die höchste Wiederholungsquote aller
+              Schularten. Dies deutet darauf hin, dass Grundschüler häufiger Schwierigkeiten in den Grundkompetenzen
+              haben.
+            </li>
+            <li>
+              <strong>Mittelschulen (MS):</strong> Mit {yearData[1]?.percent}% deutlich niedriger als Grundschulen,
+              aber noch erheblich höher als an Gymnasien. Ein moderater Anteil der Schüler wiederholt.
+            </li>
+            <li>
+              <strong>Realschulen (RS):</strong> Mit {yearData[2]?.percent}% zeigt sich ein moderater
+              Wiederholungsanteil zwischen Mittel- und Gymnasialbereich.
+            </li>
+            <li>
+              <strong>Gymnasien (GY):</strong> Mit {yearData[3]?.percent}% die niedrigste Wiederholungsquote. Gymnasien
+              haben eine Selektionsfunktion bei der Aufnahme.
+            </li>
+            <li>
+              <strong>Integrierte Gesamtschulen (IGS):</strong> Mit {yearData[4]?.percent}% ein niedriger
+              Wiederholungsanteil ähnlich wie Gymnasien.
+            </li>
+          </ul>
+        </div>
+      ),
+    },
+    hinweis: {
+      label: 'Hinweis',
+      content: (
+        <div>
+          <p style={{ fontStyle: 'italic' }}>
+            Betroffene Kinder erleben häufiger Leistungsängste, geringeres Selbstvertrauen sowie ein erhöhtes Risiko
+            für Schulabbrüche. Hohe Wiederholungsquoten können daher ein Hinweis darauf sein, dass bestehende
+            Leistungsanforderungen nicht ausreichend durch präventive Förderung, individualisierte Unterstützung und
+            adaptive Lernangebote abgefedert werden.
+          </p>
+          <p>
+            <strong>Empfohlene Maßnahmen:</strong>
+          </p>
+          <ul>
+            <li>Frühe Identifikation von Schülerinnen und Schülern mit Lernrückständen</li>
+            <li>Individualisierte Förderung und spezialisierte Unterstützung</li>
+            <li>Zusammenarbeit zwischen Schulen, Familien und Fachleuten</li>
+            <li>Prävention durch adaptive Unterrichtsgestaltung</li>
+            <li>Regelmäßige Fortbildungen für Lehrkräfte im Umgang mit heterogenen Lerngruppen</li>
+          </ul>
+        </div>
+      ),
+    },
+  }
 
   return (
     <div className="retention-view-example">
@@ -139,33 +204,18 @@ function RetentionViewExampleComponent() {
           </div>
         </div>
 
-        {/* Right column: Interpretation */}
+        {/* Right column: Interpretation with tabs */}
         <div className="retention-view-example__right-column">
-          <div className="retention-view-example__interpretation-box">
-            <h3 className="retention-view-example__interpretation-title">Befund</h3>
-            <p className="retention-view-example__interpretation-text">
-              Wie unterscheiden sich Schularten nach Wiederholungsquoten? Das Balkendiagramm zeigt die Anteile der
-              Schülerinnen und Schüler, die in verschiedenen Schultypen in Bayern Klassen wiederholen.
-            </p>
-            <ul className="retention-view-example__interpretation-list">
-              <li>
-                <strong>Grundschulen:</strong> Mit {yearData[0]?.percent}% Wiederholungsquote die höchste Quote aller
-                Schularten.
-              </li>
-              <li>
-                <strong>Mittelschulen:</strong> Mit {yearData[1]?.percent}% deutlich niedriger als Grundschulen.
-              </li>
-              <li>
-                <strong>Gymnasien:</strong> Mit {yearData[3]?.percent}% die niedrigste Wiederholungsquote.
-              </li>
-            </ul>
-          </div>
+          <InterpretationBox tabs={interpretationTabs} defaultTab="befund" title="Interpretation" />
         </div>
       </section>
 
       {/* Statistics section */}
       <section className="retention-view-example__stats-section">
         <h3 className="retention-view-example__stats-title">Trend im Vergleich zum Vorjahr</h3>
+        <p className="retention-view-example__stats-description">
+          Positive Werte zeigen eine Steigerung der Wiederholungsquote, negative Werte eine Verbesserung.
+        </p>
         <div className="retention-view-example__stats-grid">
           {yoyChanges.map(({ type, change }) => (
             <div key={type} className="retention-view-example__stat-card">
@@ -199,7 +249,7 @@ const meta: Meta<typeof RetentionViewExampleComponent> = {
     docs: {
       description: {
         component:
-          'Example of building a complete view layout that combines the BarPlot component with controls, legend, statistics, and interpretation. This demonstrates the pattern used in RetentionPage.tsx.',
+          'Complete view layout example combining BarPlot component with controls, legend, tabbed interpretation box, and statistics. Demonstrates the pattern used in RetentionPage.tsx with tabbed interpretation instead of simple cards.',
       },
     },
   },
@@ -213,4 +263,12 @@ export const Default: Story = {}
 
 export const InteractiveExample: Story = {
   render: () => <RetentionViewExampleComponent />,
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'Interactive example with year selection. Change the year dropdown to see how the chart, statistics, and interpretation update dynamically.',
+      },
+    },
+  },
 }
