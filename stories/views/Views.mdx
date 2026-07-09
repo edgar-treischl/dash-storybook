@@ -1,0 +1,200 @@
+import { Meta, Canvas } from '@storybook/blocks'
+
+<Meta title="Views" />
+
+# Views Overview
+
+Views are complete page layouts that combine multiple UI components, data management, and layout patterns. They demonstrate how to build production-ready pages using reusable components from the `@edgar-treischl/dash-ui` library.
+
+## What is a View?
+
+A **View** is a complete, self-contained page layout that:
+
+- ✅ Combines multiple components (charts, controls, statistics)
+- ✅ Manages state and data flow
+- ✅ Implements responsive layouts
+- ✅ Demonstrates best practices for structuring pages
+- ✅ Serves as a reference for building new pages in your applications
+
+## View Architecture
+
+### Typical View Structure
+
+```
+┌─────────────────────────────────────────┐
+│          Main Layout Container          │
+├──────────────────────┬──────────────────┤
+│                      │                  │
+│  Left Column         │  Right Column    │
+│  ┌────────────────┐  │  ┌────────────┐  │
+│  │   Controls     │  │  │ Interpret  │  │
+│  │   Section      │  │  │ ation Box  │  │
+│  ├────────────────┤  │  └────────────┘  │
+│  │                │  │                  │
+│  │   Chart Card   │  │   Additional     │
+│  │   - BarPlot    │  │   Information    │
+│  │   - Legend     │  │                  │
+│  │                │  │                  │
+│  └────────────────┘  │                  │
+└──────────────────────┴──────────────────┘
+├─────────────────────────────────────────┤
+│   Statistics/Trends Section             │
+│   Year-over-year changes, KPIs, etc.    │
+└─────────────────────────────────────────┘
+```
+
+## Key Components Used
+
+### Data Visualization
+- **BarPlot** - Display retention rates by school type
+- Supports multiple data series and year comparisons
+
+### Layout Components
+- **Card** - Container for grouped content with shadows and padding
+- **Grid Layout** - Responsive grid system for statistics
+- **Interpretation Box** - Sidebar with findings and insights
+
+### Control Components
+- **Year Select** - Dropdown for year/period selection
+- **Filters** - Additional data filtering controls
+
+## View Examples
+
+### Retention View Example
+A complete example showing how to structure a view with:
+- Interactive year selection
+- BarPlot component integration
+- Color-coded legend
+- Year-over-year statistics
+- Responsive two-column layout
+
+**Features:**
+- Multiple school years (2022/23, 2023/24, 2024/25)
+- Automatic change calculations
+- Interpretation panel
+- Statistics grid
+
+**Best practices demonstrated:**
+- Type-safe data management
+- Responsive CSS Grid layout
+- Reusable style constants
+- Component composition patterns
+
+## Building a New View
+
+### Step 1: Plan the Layout
+```
+- Identify main sections (header, chart, sidebar, footer)
+- Decide on responsiveness breakpoints
+- Consider data flow and state management
+```
+
+### Step 2: Create the Component
+```typescript
+// views/YourView.stories.tsx
+import { Meta, StoryObj } from '@storybook/react'
+
+function YourViewComponent() {
+  const [state, setState] = useState(...)
+  
+  return (
+    <div className="your-view">
+      <section className="your-view__main">
+        {/* Your content */}
+      </section>
+    </div>
+  )
+}
+
+const meta: Meta<typeof YourViewComponent> = {
+  title: 'Views/Your View Name',
+  component: YourViewComponent,
+  parameters: { layout: 'fullscreen' }
+}
+
+export default meta
+type Story = StoryObj<typeof meta>
+
+export const Default: Story = {}
+```
+
+### Step 3: Add Styling
+```typescript
+// views/YourView.css
+.your-view {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .your-view {
+    grid-template-columns: 1fr;
+  }
+}
+```
+
+### Step 4: Integrate Components
+```typescript
+import { BarPlot } from '@edgar-treischl/dash-ui'
+
+<BarPlot data={chartData} year={selectedYear} />
+```
+
+## Styling Best Practices
+
+### Color Coding
+- Use consistent color schemes across all views
+- Define color constants for school types, status indicators, etc.
+- Example: `SCHOOL_TYPE_COLORS = { GS: '#FF6B6B', MS: '#4ECDC4', ... }`
+
+### Responsive Design
+- Mobile-first approach
+- Use CSS Grid and Flexbox
+- Test breakpoints: 640px, 1024px, 1280px+
+
+### Spacing and Layout
+- Use consistent rem-based spacing (0.5rem, 1rem, 1.5rem, 2rem)
+- Maintain visual hierarchy with typography and spacing
+- Card-based layouts for grouped content
+
+## Data Management Patterns
+
+### State Management
+```typescript
+const [selectedYear, setSelectedYear] = useState<SchoolYear>('2024/25')
+const [filters, setFilters] = useState<Filters>(defaultFilters)
+```
+
+### Data Calculations
+```typescript
+// Year-over-year changes
+const calculateYoYChange = (current: number, previous: number) => {
+  return current - previous
+}
+
+// Aggregations
+const stats = buildBarChartStats(yearData)
+```
+
+## Performance Tips
+
+✨ **Memoization** - Use `React.memo()` for view components to prevent unnecessary re-renders
+
+✨ **Lazy Loading** - Load heavy data visualizations only when visible
+
+✨ **Type Safety** - Define clear types for all data structures
+
+✨ **Responsive Images** - Use CSS Grid and Flexbox instead of fixed widths
+
+## View Components Library
+
+Each view story lives in this folder and demonstrates:
+- Complete page layouts
+- Data binding patterns
+- State management
+- Responsive design
+- Component composition
+
+Explore the available views in the sidebar to see working examples!
