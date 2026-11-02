@@ -27,6 +27,8 @@
     "@storybook/blocks": "^8.6.0",
     "@storybook/react": "^8.6.0",
     "@storybook/react-vite": "^8.6.0",
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
     "eslint": "^10.6.0",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.1.1",
@@ -41,6 +43,6 @@
   },
   "type": "module",
   "dependencies": {
-    "@edgar-treischl/dash-ui": "github:edgar-treischl/dash-ui"
+    "@edgar-treischl/dash-ui": "git+https://github.com/edgar-treischl/dash-ui.git#main"
   }
 }
