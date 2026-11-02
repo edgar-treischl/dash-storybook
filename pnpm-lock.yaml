@@ -198,8 +198,8 @@ importers:
   .:
     dependencies:
       '@edgar-treischl/dash-ui':
-        specifier: git+https://github.com/edgar-treischl/dash-ui.git#main
-        version: https://codeload.github.com/edgar-treischl/dash-ui/tar.gz/bcea56ec820c535ae4cf33b794906d5662d9f341(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
+        specifier: github:edgar-treischl/dash-ui#main
+        version: https://codeload.github.com/edgar-treischl/dash-ui/tar.gz/b80bb5ccdd334ed67925c5c6835fbe5152667d09(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
     devDependencies:
       '@eslint/js':
         specifier: ^10.0.1
@@ -344,8 +344,8 @@ packages:
   '@cacheable/utils@2.5.0':
     resolution: {integrity: sha512-buipgOVDkkPXNR5+xBpDw7Zk2n1EvU7qBJCNUcL7rhQ//kfpOXPAvQ511Os0vpLYJ1pZnvudNytkQt2hst3wqA==}
 
-  '@edgar-treischl/dash-ui@https://codeload.github.com/edgar-treischl/dash-ui/tar.gz/bcea56ec820c535ae4cf33b794906d5662d9f341':
-    resolution: {gitHosted: true, integrity: sha512-g27GA7HZ9ALzxAGQz0ZItRsXCA1gUkGBGXWEYtHI1vs3IL5bD1g8c9hruQ1TRJNSC4lfbUzIrQ4uBawvDgoA0Q==, tarball: https://codeload.github.com/edgar-treischl/dash-ui/tar.gz/bcea56ec820c535ae4cf33b794906d5662d9f341}
+  '@edgar-treischl/dash-ui@https://codeload.github.com/edgar-treischl/dash-ui/tar.gz/b80bb5ccdd334ed67925c5c6835fbe5152667d09':
+    resolution: {gitHosted: true, integrity: sha512-VRRILPSR4C/bLOU9eVrU+iONf0Y6hzJH+0eJFQXNtpIAdlBfj7UxQrO+uCfeFadzXQuUs4dcpOStIt7yMoAPgw==, tarball: https://codeload.github.com/edgar-treischl/dash-ui/tar.gz/b80bb5ccdd334ed67925c5c6835fbe5152667d09}
     version: 1.0.0
     peerDependencies:
       react: ^19.0.0
@@ -2489,7 +2489,7 @@ snapshots:
       hashery: 1.5.1
       keyv: 5.6.0
 
-  '@edgar-treischl/dash-ui@https://codeload.github.com/edgar-treischl/dash-ui/tar.gz/bcea56ec820c535ae4cf33b794906d5662d9f341(react-dom@19.3.1(react@19.3.1))(react@19.3.1)':
+  '@edgar-treischl/dash-ui@https://codeload.github.com/edgar-treischl/dash-ui/tar.gz/b80bb5ccdd334ed67925c5c6835fbe5152667d09(react-dom@19.3.1(react@19.3.1))(react@19.3.1)':
     dependencies:
       react: 19.3.1
       react-dom: 19.3.1(react@19.3.1)

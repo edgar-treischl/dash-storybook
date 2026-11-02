@@ -43,6 +43,6 @@
   },
   "type": "module",
   "dependencies": {
-    "@edgar-treischl/dash-ui": "git+https://github.com/edgar-treischl/dash-ui.git#main"
+    "@edgar-treischl/dash-ui": "github:edgar-treischl/dash-ui#main"
   }
 }
