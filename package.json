@@ -41,6 +41,6 @@
   },
   "type": "module",
   "dependencies": {
-    "@edgar-treischl/dash-ui": "link:../dash-ui"
+    "@edgar-treischl/dash-ui": "github:edgar-treischl/dash-ui"
   }
 }
