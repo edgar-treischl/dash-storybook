@@ -20,6 +20,15 @@ const config: StorybookConfig = {
   },
   staticDirs: ["../public"],
   viteFinal: async (config) => {
+    config.optimizeDeps = {
+      ...config.optimizeDeps,
+      exclude: [...(config.optimizeDeps?.exclude ?? []), "@edgar-treischl/dash-ui"],
+    };
+    config.resolve = {
+      ...config.resolve,
+      dedupe: [...(config.resolve?.dedupe ?? []), "react", "react-dom"],
+    };
+
     // Ensure React is available globally
     if (config.define) {
       config.define['global'] = 'window';
