@@ -18,11 +18,11 @@ const SCHOOL_TYPE_LABELS: Record<SchoolType, string> = {
 }
 
 const SCHOOL_TYPE_COLORS: Record<SchoolType, string> = {
-  GS: '#FF6B6B',
-  MS: '#4ECDC4',
-  RS: '#45B7D1',
-  GY: '#FFA07A',
-  IGS: '#98D8C8',
+  GS: '#264653',
+  MS: '#2a9d8f',
+  RS: '#e9c46a',
+  GY: '#f4a261',
+  IGS: '#e76f51',
 }
 
 const SCHOOL_TYPES: SchoolType[] = ['GS', 'MS', 'RS', 'GY', 'IGS']
